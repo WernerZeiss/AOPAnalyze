@@ -1,0 +1,30 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation'com.android.tools.build:gradle:4.0.0'
+    implementation'com.android.tools.build:gradle-api:4.0.0'
+    //ASM相关
+    implementation 'org.ow2.asm:asm:8.0.1'
+    implementation 'org.ow2.asm:asm-util:7.0'
+    implementation 'org.ow2.asm:asm-commons:7.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group='com.werner.analyze'
+version='1.0.0'
+
+def localRepoURL = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: localRepoURL)
+        }
+    }
+}

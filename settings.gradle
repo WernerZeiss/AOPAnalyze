@@ -1,0 +1,3 @@
+include ':aoplibrary'
+include ':app'
+rootProject.name = "AOPAnalyze"
