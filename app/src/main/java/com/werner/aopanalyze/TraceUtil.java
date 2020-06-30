@@ -22,6 +22,16 @@ public class TraceUtil {
     }
 
 
+    public static void onActivityResume(Activity activity) {
+        Toast.makeText(activity, activity.getClass().getName() + "call onResume", Toast.LENGTH_LONG).show();
+    }
+
+
+    public static void onActivityPause(Activity activity) {
+        Toast.makeText(activity, activity.getClass().getName() + "call onPause", Toast.LENGTH_LONG).show();
+    }
+
+
     /**
      * 当Activity执行了onDestroy时触发
      *
